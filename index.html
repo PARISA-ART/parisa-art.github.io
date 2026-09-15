@@ -1,4 +1,4 @@
-[16/09/2026 1:31 am] 𝒕𝒂𝒏𝒕𝒆 𝑷𝒂𝒓𝒊𝒔𝒂: <!DOCTYPE html>
+[16/09/2026 2:36 am] 𝒕𝒂𝒏𝒕𝒆 𝑷𝒂𝒓𝒊𝒔𝒂: <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
@@ -7,485 +7,550 @@
 <title>PARISA ART — A House of Creation</title>
 
 <style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
 }
 
-html, body {
-    width: 100%;
-    height: 100%;
-    background: #000;
-    font-family: Arial, Helvetica, sans-serif;
+html{
+  scroll-behavior:smooth;
 }
 
-/* MAIN ENTRANCE */
-
-.entrance {
-    position: relative;
-    width: 100%;
-    height: 100vh;
-
-    background-image: url("emarat.jpg");
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
-
-    overflow: hidden;
+body{
+  background:#171513;
+  color:#211c18;
+  font-family:Georgia, "Times New Roman", serif;
 }
 
-/* CINEMATIC DARK LAYER */
+/* ===== HERO ===== */
 
-.entrance::before {
-    content: "";
-    position: absolute;
-    inset: 0;
+.hero{
+  position:relative;
+  width:100%;
+  min-height:100vh;
+  overflow:hidden;
 
-    background:
-        linear-gradient(
-            to bottom,
-            rgba(0,0,0,0.20),
-            rgba(0,0,0,0.08) 45%,
-            rgba(0,0,0,0.48)
-        );
+  background:
+    linear-gradient(
+      rgba(20,15,12,.08),
+      rgba(20,15,12,.08)
+    ),
+    url("Emarat%203.PNG");
+
+  background-size:cover;
+  background-position:center;
+  background-repeat:no-repeat;
 }
 
-/* LOGO */
+/* ===== TOP NAV ===== */
 
-.logo {
-    position: absolute;
-    top: 38px;
-    left: 50%;
-    transform: translateX(-50%);
+.top-nav{
+  position:absolute;
+  top:34px;
+  left:50%;
+  transform:translateX(-50%);
+  z-index:10;
 
-    color: white;
+  display:flex;
+  gap:36px;
+  align-items:center;
 
-    font-family: Georgia, "Times New Roman", serif;
-    font-size: 21px;
-    font-weight: 400;
-
-    letter-spacing: 9px;
-
-    white-space: nowrap;
-
-    z-index: 2;
+  white-space:nowrap;
 }
 
-/* CENTER CONTENT */
-
-.center {
-    position: absolute;
-
-    left: 50%;
-    bottom: 9%;
-
-    transform: translateX(-50%);
-
-    width: 90%;
-
-    text-align: center;
-    color: white;
-
-    z-index: 2;
+.top-nav a{
+  color:#554b43;
+  text-decoration:none;
+  font-family:Arial, sans-serif;
+  font-size:11px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  transition:.3s;
 }
 
-.welcome {
-    font-size: 10px;
-    letter-spacing: 6px;
-    text-transform: uppercase;
-
-    margin-bottom: 18px;
-
-    opacity: 0.85;
+.top-nav a:hover{
+  color:#000;
 }
 
-.title {
-    font-family: Georgia, "Times New Roman", serif;
+/* ===== LEFT BRAND ===== */
 
-    font-size: clamp(38px, 6vw, 85px);
-    font-weight: 400;
-
-    letter-spacing: 9px;
-
-    line-height: 1;
+.brand{
+  position:absolute;
+  top:34px;
+  left:50px;
+  z-index:10;
 }
 
-.subtitle {
-    margin-top: 17px;
-
-    font-size: 11px;
-    letter-spacing: 7px;
-
-    text-transform: uppercase;
-
-    opacity: 0.9;
+.brand-title{
+  font-size:25px;
+  font-weight:400;
+  letter-spacing:6px;
 }
 
-/* ENTER BUTTON */
-
-.enter {
-    display: inline-block;
-
-    margin-top: 35px;
-
-    padding: 14px 34px;
-
-    border: 1px solid rgba(255,255,255,0.65);
-
-    color: white;
-    text-decoration: none;
-
-    font-size: 10px;
-    letter-spacing: 5px;
-
-    text-transform: uppercase;
-
-    transition: 0.4s ease;
-
-    backdrop-filter: blur(4px);
+.brand-sub{
+  margin-top:10px;
+  font-family:Arial, sans-serif;
+  font-size:8px;
+  letter-spacing:4px;
+  text-transform:uppercase;
 }
 
-.enter:hover {
-    background: white;
-    color: black;
+/* ===== LEFT MENU ===== */
+
+.left-menu{
+  position:absolute;
+  left:52px;
+  top:50%;
+  transform:translateY(-44%);
+  z-index:10;
+
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+
+  border-left:1px solid rgba(50,40,35,.45);
+  padding-left:22px;
 }
 
-/* SCROLL TEXT */
-
-.scroll {
-    position: absolute;
-
-    right: 28px;
-    bottom: 34px;
-
-    color: rgba(255,255,255,0.75);
-
-    font-size: 8px;
-    letter-spacing: 4px;
-
-    writing-mode: vertical-rl;
-
-    z-index: 2;
+.left-menu a{
+  color:#413a34;
+  text-decoration:none;
+  font-family:Arial, sans-serif;
+  font-size:10px;
+  letter-spacing:3px;
+  text-transform:uppercase;
 }
 
-/* MOBILE */
-
-@media (max-width: 700px) {
-
-    .logo {
-        top: 28px;
-        font-size: 15px;
-        letter-spacing: 6px;
-    }
-
-    .center {
-        bottom: 12%;
-    }
-
-    .title {
-        letter-spacing: 5px;
-    }
-
-    .subtitle {
-        letter-spacing: 4px;
-        font-size: 9px;
-    }
-
-    .scroll {
-        display: none;
-    }
+.left-menu a::after{
+  content:"";
+  display:block;
+  width:18px;
+  height:1px;
+  background:#777068;
+  margin-top:10px;
+  transition:.3s;
 }
+
+.left-menu a:hover::after{
+  width:42px;
+}
+
+/* ===== CENTER ===== */
+
+.center{
+  position:absolute;
+  z-index:8;
+
+  left:50%;
+  top:47%;
+  transform:translate(-50%,-50%);
+
+  width:min(720px,60vw);
+  text-align:center;
+}
+
+.welcome{
+  font-family:Arial, sans-serif;
+  font-size:11px;
+  letter-spacing:8px;
+  text-transform:uppercase;
+  margin-bottom:18px;
+}
+
+.main-title{
+  font-size:clamp(42px,5.2vw,78px);
+  font-weight:400;
+  letter-spacing:10px;
+  white-space:nowrap;
+}
+
+.house{
+  margin-top:9px;
+  font-family:Arial, sans-serif;
+  font-size:11px;
+  letter-spacing:9px;
+  text-transform:uppercase;
+}
+
+.line{
+  width:52px;
+  height:1px;
+  background:#50483f;
+  margin:27px auto;
+}
+
+.tagline{
+  font-style:italic;
+  font-size:16px;
+  letter-spacing:2px;
+}
+
+.enter{
+  display:inline-block;
+  margin-top:38px;
+  padding:15px 31px;
+
+  border:1px solid rgba(45,38,32,.55);
+  color:#27211d;
+  text-decoration:none;
+
+  font-family:Arial, sans-serif;
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+
+  background:rgba(255,255,255,.08);
+  backdrop-filter:blur(2px);
+
+  transition:.35s;
+}
+
+.enter:hover{
+  background:#211c18;
+  color:#fff;
+}
+
+/* ===== RIGHT TEXT ===== */
+
+.right-story{
+  position:absolute;
+  right:65px;
+  top:50%;
+  transform:translateY(-50%);
+  z-index:9;
+
+  width:145px;
+
+  font-size:15px;
+  line-height:2;
+  letter-spacing:2px;
+  text-transform:uppercase;
+}
+
+.right-story::after{
+  content:"";
+  display:block;
+  width:32px;
+  height:1px;
+  background:#5b5149;
+  margin-top:24px;
+}
+
+/* ===== LOCATION ===== */
+
+.location{
+  position:absolute;
+  right:66px;
+  bottom:80px;
+
+  font-family:Arial, sans-serif;
+  font-size:9px;
+  letter-spacing:4px;
+  line-height:2.2;
+  text-transform:uppercase;
+}
+
+/* ===== LANGUAGE ===== */
+
+.languages{
+  position:absolute;
+  left:50px;
+  bottom:34px;
+
+  font-family:Arial, sans-serif;
+  font-size:8px;
+  letter-spacing:3px;
+}
+
+.languages a{
+  color:#403832;
+  text-decoration:none;
+}
+
+/* ===== SCROLL ===== */
+
+.scroll{
+  position:absolute;
+  bottom:30px;
+  left:50%;
+  transform:translateX(-50%);
+
+  font-family:Arial, sans-serif;
+  font-size:8px;
+[16/09/2026 2:36 am] 𝒕𝒂𝒏𝒕𝒆 𝑷𝒂𝒓𝒊𝒔𝒂: letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+/* ===== CONTENT ===== */
+
+.section{
+  min-height:100vh;
+  background:#f1ece5;
+  padding:120px 10%;
+}
+
+.section-label{
+  font-family:Arial, sans-serif;
+  font-size:9px;
+  letter-spacing:5px;
+  text-transform:uppercase;
+  margin-bottom:25px;
+}
+
+.section h2{
+  font-size:clamp(40px,6vw,85px);
+  font-weight:400;
+  letter-spacing:5px;
+  margin-bottom:40px;
+}
+
+.section p{
+  max-width:720px;
+  font-size:18px;
+  line-height:1.9;
+  color:#554b43;
+}
+
+/* ===== CREATIVE WORLDS ===== */
+
+.worlds{
+  margin-top:70px;
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:25px;
+}
+
+.world{
+  border-top:1px solid #93877d;
+  padding-top:25px;
+  min-height:160px;
+}
+
+.world h3{
+  font-weight:400;
+  font-size:22px;
+  letter-spacing:2px;
+  margin-bottom:14px;
+}
+
+.world span{
+  font-family:Arial,sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#766b62;
+}
+
+/* ===== MOBILE ===== */
+
+@media(max-width:900px){
+
+  .hero{
+    background-position:center;
+  }
+
+  .top-nav{
+    display:none;
+  }
+
+  .brand{
+    left:24px;
+    top:25px;
+  }
+
+  .brand-title{
+    font-size:18px;
+  }
+
+  .left-menu{
+    display:none;
+  }
+
+  .right-story,
+  .location{
+    display:none;
+  }
+
+  .center{
+    width:90%;
+    top:50%;
+  }
+
+  .main-title{
+    font-size:42px;
+    letter-spacing:5px;
+    white-space:normal;
+  }
+
+  .house{
+    letter-spacing:5px;
+  }
+
+  .languages{
+    left:24px;
+  }
+
+  .worlds{
+    grid-template-columns:1fr;
+  }
+}
+
 </style>
 </head>
 
-
 <body>
 
-<section class="entrance">
+<section class="hero" id="home">
 
-    <div class="logo">
-        PARISA ART
+  <div class="brand">
+    <div class="brand-title">PARISA ART</div>
+    <div class="brand-sub">Styling · Art · A Higher Vision</div>
+  </div>
+
+  <nav class="top-nav">
+    <a href="#home">Home</a>
+    <a href="#about">About</a>
+    <a href="#styling">Styling</a>
+    <a href="#art">Art</a>
+    <a href="#bridal">Bridal</a>
+    <a href="#gallery">Gallery</a>
+    <a href="#contact">Contact</a>
+  </nav>
+
+  <div class="left-menu">
+    <a href="#styling">Styling</a>
+    <a href="#art">Art</a>
+    <a href="#bridal">Bridal</a>
+    <a href="#photography">Photography</a>
+    <a href="#beyond">And Beyond</a>
+  </div>
+
+  <main class="center">
+
+    <div class="welcome">
+      Welcome to
     </div>
 
-    <div class="center">
+    <h1 class="main-title">
+      PARISA ART
+    </h1>
 
-        <div class="welcome">
-            Welcome to
-        </div>
-
-        <h1 class="title">
-            THE CREATION MANSION
-        </h1>
-
-        <div class="subtitle">
-            Create · Inspire · Transform
-        </div>
-
-        <a href="#explore" class="enter">
-            Enter
-        </a>
-
+    <div class="house">
+      A House of Creation
     </div>
 
-    <div class="scroll">
-        SCROLL TO EXPLORE
+    <div class="line"></div>
+
+    <div class="tagline">
+      Create · Inspire · Transform
     </div>
+
+    <a class="enter" href="#about">
+      Enter &nbsp; →
+    </a>
+
+  </main>
+
+  <div class="right-story">
+    More<br>
+    Than A Look<br>
+    A Story
+  </div>
+
+  <div class="location">
+    Köln<br>
+    & Beyond
+  </div>
+
+  <div class="languages">
+    <a href="#">DE</a> ·
+    <a href="#">EN</a> ·
+    <a href="#">FA</a>
+  </div>
+
+  <div class="scroll">
+    Scroll to Explore
+  </div>
 
 </section>
 
 
-<section id="explore"
-style="
-height:100vh;
-background:#f4f3ef;
-display:flex;
-align-items:center;
-justify-content:center;
-text-align:center;
-">
+<section class="section" id="about">
 
-<div>
+  <div class="section-label">
+    The Artist
+  </div>
 
-<p style="
-font-size:10px;
-letter-spacing:6px;
-margin-bottom:25px;
-">
-A HOUSE OF CREATION
-</p>
+  <h2>
+    A House Without Limits.
+  </h2>
 
-<h2 style="
-font-family:Georgia,serif;
-font-weight:400;
-font-size:clamp(42px,7vw,90px);
-letter-spacing:5px;
-">
-WHERE IDEAS<br>
-BECOME ART
-</h2>
+  <p>
+    PARISA ART is a creative world built around transformation,
+    aesthetics and artistic expression — beginning with styling
+    and expanding into painting, visual art, bridal, photography
+    and future creations without boundaries.
+  </p>
 
-</div>
+  <div class="worlds">
 
-</section>
-
-</body>
-</html>
-[16/09/2026 1:47 am] 𝒕𝒂𝒏𝒕𝒆 𝑷𝒂𝒓𝒊𝒔𝒂: background-position:center;
-    }
-
-    .hero h1{
-        font-size:60px;
-    }
-
-    .creation{
-        grid-template-columns:45px 1fr;
-    }
-
-    .creation p{
-        display:none;
-    }
-
-    footer{
-        flex-direction:column;
-        align-items:flex-start;
-        gap:35px;
-    }
-}
-
-</style>
-</head>
-
-<body>
-
-<header>
-
-    <div class="logo">
-        PARISA ART
+    <div class="world" id="styling">
+      <span>01</span>
+      <h3>Styling</h3>
+      <span>Hair · Beauty · Visual Identity</span>
     </div>
 
-    <nav>
-        <a href="#styling">STYLING</a>
-        <a href="#painting">PAINTING</a>
-        <a href="#creations">CREATIONS</a>
-        <a href="#about">ABOUT</a>
-        <a href="#contact">CONTACT</a>
-    </nav>
-
-</header>
-
-
-<section class="hero">
-
-    <div class="hero-content">
-
-        <div class="small">
-            WELCOME TO
-        </div>
-
-        <h1>
-            PARISA<br>
-            ART
-        </h1>
-
-        <h2>
-            A HOUSE OF CREATION
-        </h2>
-
-        <div class="line"></div>
-
-        <p>
-            Create · Inspire · Transform
-        </p>
-
-        <a class="enter" href="#creations">
-            ENTER
-        </a>
-
+    <div class="world" id="art">
+      <span>02</span>
+      <h3>Painting & Art</h3>
+      <span>Original Works · Collections</span>
     </div>
+
+    <div class="world" id="bridal">
+      <span>03</span>
+      <h3>Bridal</h3>
+      <span>Editorial · Luxury · Destination</span>
+    </div>
+
+    <div class="world" id="photography">
+      <span>04</span>
+      <h3>Visual Creation</h3>
+      <span>Photography · Image · Story</span>
+    </div>
+
+    <div class="world" id="gallery">
+      <span>05</span>
+      <h3>Gallery</h3>
+      <span>Selected Works</span>
+    </div>
+
+    <div class="world" id="beyond">
+      <span>06</span>
+      <h3>And Beyond</h3>
+[16/09/2026 2:36 am] 𝒕𝒂𝒏𝒕𝒆 𝑷𝒂𝒓𝒊𝒔𝒂: <span>Future Creations · Objects · Editions</span>
+    </div>
+
+  </div>
 
 </section>
 
 
-<section class="manifesto" id="about">
+<section class="section" id="contact">
 
-    <div>
+  <div class="section-label">
+    Contact
+  </div>
 
-        <div class="small">
-            PARISA ART
-        </div>
+  <h2>
+    Create With Parisa.
+  </h2>
 
-        <h2>
-            Where ideas<br>
-            become art.
-        </h2>
-
-    </div>
-
-</section>
-
-
-<section class="creations" id="creations">
-
-    <div class="section-label">
-        THE HOUSE
-    </div>
-
-
-    <div class="creation primary" id="styling">
-
-        <div class="number">
-            01
-        </div>
-
-        <h3>
-            STYLING
-        </h3>
-
-        <p>
-            IDENTITY · BEAUTY · FORM
-        </p>
-
-    </div>
-
-
-    <div class="creation" id="painting">
-
-        <div class="number">
-            02
-        </div>
-
-        <h3>
-            PAINTING
-        </h3>
-
-        <p>
-            ORIGINAL ART · COLLECTIONS
-        </p>
-
-    </div>
-
-
-    <div class="creation">
-
-        <div class="number">
-            03
-        </div>
-
-        <h3>
-            VISUAL ART
-        </h3>
-
-        <p>
-            IMAGE · CONCEPT · EXPRESSION
-        </p>
-
-    </div>
-
-
-    <div class="creation">
-
-        <div class="number">
-            04
-        </div>
-
-        <h3>
-            PHOTOGRAPHY
-        </h3>
-
-        <p>
-            MOMENTS · STORIES · VISION
-        </p>
-
-    </div>
+  <p>
+    Styling · Art · Creative Collaborations · Selected Projects
+  </p>
 
 </section>
-
-
-<section class="open">
-
-    <div>
-
-        <div class="small">
-            AN EVOLVING HOUSE OF ART
-        </div>
-
-        <h2>
-            THE NEXT<br>
-            CREATION
-        </h2>
-
-        <p>
-            PARISA ART is not defined by one medium.
-            It is an evolving space for styling,
-            painting, visual expression and
-            creations yet to come.
-        </p>
-
-    </div>
-
-</section>
-
-
-<footer id="contact">
-
-    <div>
-
-        <h2>
-            PARISA ART
-        </h2>
-
-        <p>
-            A HOUSE OF CREATION
-        </p>
-
-    </div>
-
-    <div class="copyright">
-        CREATE · INSPIRE · TRANSFORM
-    </div>
-
-</footer>
 
 </body>
 </html>

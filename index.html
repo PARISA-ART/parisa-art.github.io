@@ -1,739 +1,273 @@
-[16/09/2026 12:42 am] 𝒕𝒂𝒏𝒕𝒆 𝑷𝒂𝒓𝒊𝒔𝒂: <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <title>PARISA ART — A House of Creation</title>
+<title>PARISA ART — A House of Creation</title>
 
-  <meta name="description"
-        content="PARISA ART — Art, Visual Styling, Photography and The Creation Mansion.">
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-  <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+html, body {
+    width: 100%;
+    height: 100%;
+    background: #000;
+    font-family: Arial, Helvetica, sans-serif;
+}
 
-    html {
-      scroll-behavior: smooth;
-    }
+/* MAIN ENTRANCE */
 
-    body {
-      font-family: Arial, Helvetica, sans-serif;
-      background: #eee8df;
-      color: #181715;
-      overflow-x: hidden;
-    }
+.entrance {
+    position: relative;
+    width: 100%;
+    height: 100vh;
 
-    /* =========================
-       HERO / ENTRANCE
-    ========================== */
+    background-image: url("emarat.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 
-    .hero {
-      min-height: 100vh;
-      position: relative;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      overflow: hidden;
+    overflow: hidden;
+}
 
-      background:
+/* CINEMATIC DARK LAYER */
+
+.entrance::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+
+    background:
         linear-gradient(
-          90deg,
-          rgba(35, 31, 27, 0.18),
-          rgba(238, 232, 223, 0.08),
-          rgba(35, 31, 27, 0.12)
-        ),
-        url("hero.jpg");
+            to bottom,
+            rgba(0,0,0,0.20),
+            rgba(0,0,0,0.08) 45%,
+            rgba(0,0,0,0.48)
+        );
+}
 
-      background-size: cover;
-      background-position: center;
-    }
+/* LOGO */
 
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        to bottom,
-        rgba(255,255,255,0.03),
-        rgba(0,0,0,0.05)
-      );
-      pointer-events: none;
-    }
+.logo {
+    position: absolute;
+    top: 38px;
+    left: 50%;
+    transform: translateX(-50%);
 
-    /* =========================
-       NAVIGATION
-    ========================== */
+    color: white;
 
-    nav {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      padding: 32px 5%;
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 21px;
+    font-weight: 400;
 
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
+    letter-spacing: 9px;
 
-      z-index: 10;
-    }
+    white-space: nowrap;
+
+    z-index: 2;
+}
+
+/* CENTER CONTENT */
+
+.center {
+    position: absolute;
+
+    left: 50%;
+    bottom: 9%;
+
+    transform: translateX(-50%);
+
+    width: 90%;
+
+    text-align: center;
+    color: white;
+
+    z-index: 2;
+}
+
+.welcome {
+    font-size: 10px;
+    letter-spacing: 6px;
+    text-transform: uppercase;
+
+    margin-bottom: 18px;
+
+    opacity: 0.85;
+}
+
+.title {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(38px, 6vw, 85px);
+    font-weight: 400;
+
+    letter-spacing: 9px;
+
+    line-height: 1;
+}
+
+.subtitle {
+    margin-top: 17px;
+
+    font-size: 11px;
+    letter-spacing: 7px;
+
+    text-transform: uppercase;
+
+    opacity: 0.9;
+}
+
+/* ENTER BUTTON */
+
+.enter {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 14px 34px;
+
+    border: 1px solid rgba(255,255,255,0.65);
+
+    color: white;
+    text-decoration: none;
+
+    font-size: 10px;
+    letter-spacing: 5px;
+
+    text-transform: uppercase;
+
+    transition: 0.4s ease;
+
+    backdrop-filter: blur(4px);
+}
+
+.enter:hover {
+    background: white;
+    color: black;
+}
+
+/* SCROLL TEXT */
+
+.scroll {
+    position: absolute;
+
+    right: 28px;
+    bottom: 34px;
+
+    color: rgba(255,255,255,0.75);
+
+    font-size: 8px;
+    letter-spacing: 4px;
+
+    writing-mode: vertical-rl;
+
+    z-index: 2;
+}
+
+/* MOBILE */
+
+@media (max-width: 700px) {
 
     .logo {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 24px;
-      letter-spacing: 7px;
-      font-weight: 400;
+        top: 28px;
+        font-size: 15px;
+        letter-spacing: 6px;
     }
 
-    .nav-links {
-      display: flex;
-      gap: 34px;
+    .center {
+        bottom: 12%;
     }
 
-    .nav-links a {
-      text-decoration: none;
-      color: #181715;
-      font-size: 11px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-      transition: opacity 0.3s ease;
-    }
-
-    .nav-links a:hover {
-      opacity: 0.45;
-    }
-
-    /* =========================
-       CENTER HERO TEXT
-    ========================== */
-
-    .hero-content {
-      position: relative;
-      z-index: 5;
-      text-align: center;
-      padding: 30px;
-      max-width: 950px;
-    }
-
-    .welcome {
-      font-size: 11px;
-      letter-spacing: 8px;
-      text-transform: uppercase;
-      margin-bottom: 20px;
-    }
-
-    h1 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-weight: 400;
-      font-size: clamp(55px, 8vw, 125px);
-      letter-spacing: 12px;
-      line-height: 0.95;
+    .title {
+        letter-spacing: 5px;
     }
 
     .subtitle {
-      margin-top: 24px;
-      font-size: 12px;
-      letter-spacing: 9px;
-      text-transform: uppercase;
-    }
-
-    .line {
-      width: 55px;
-      height: 1px;
-      background: #181715;
-      margin: 34px auto;
-      opacity: 0.5;
-    }
-
-    .tagline {
-      font-family: Georgia, "Times New Roman", serif;
-      font-style: italic;
-      font-size: 18px;
-      letter-spacing: 3px;
-    }
-
-    .enter-button {
-      display: inline-block;
-      margin-top: 42px;
-      padding: 16px 42px;
-
-      border: 1px solid rgba(24,23,21,0.65);
-
-      text-decoration: none;
-      color: #181715;
-
-      font-size: 11px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-
-      transition: all 0.35s ease;
-    }
-
-    .enter-button:hover {
-      background: #181715;
-      color: #f4efe8;
+        letter-spacing: 4px;
+        font-size: 9px;
     }
 
     .scroll {
-      position: absolute;
-      bottom: 28px;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 5;
-
-      font-size: 9px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-    }
-
-    /* =========================
-       INTRO
-    ========================== */
-
-    .intro {
-      min-height: 80vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-
-      padding: 100px 8%;
-      background: #f5f0e8;
-    }
-
-    .intro-inner {
-      max-width: 850px;
-    }
-
-    .section-label {
-      font-size: 10px;
-[16/09/2026 12:42 am] 𝒕𝒂𝒏𝒕𝒆 𝑷𝒂𝒓𝒊𝒔𝒂: letter-spacing: 6px;
-      text-transform: uppercase;
-      margin-bottom: 30px;
-      opacity: 0.6;
-    }
-
-    .intro h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 5vw, 72px);
-      font-weight: 400;
-      line-height: 1.1;
-    }
-
-    .intro p {
-      max-width: 650px;
-      margin: 35px auto 0;
-      font-size: 14px;
-      line-height: 2;
-      letter-spacing: 1px;
-      color: #59544e;
-    }
-
-    /* =========================
-       TWO WORLDS
-    ========================== */
-
-    .worlds {
-      background: #e7dfd4;
-      padding: 110px 6%;
-    }
-
-    .world-title {
-      text-align: center;
-      margin-bottom: 75px;
-    }
-
-    .world-title h2 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(40px, 5vw, 70px);
-      font-weight: 400;
-    }
-
-    .world-grid {
-      max-width: 1250px;
-      margin: auto;
-
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 25px;
-    }
-
-    .world-card {
-      min-height: 620px;
-      position: relative;
-      overflow: hidden;
-
-      display: flex;
-      align-items: flex-end;
-
-      padding: 50px;
-
-      background: #d8cfc3;
-
-      transition: transform 0.5s ease;
-    }
-
-    .world-card:hover {
-      transform: translateY(-7px);
-    }
-
-    .world-card::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-
-      background:
-        linear-gradient(
-          to top,
-          rgba(25,22,19,0.65),
-          rgba(25,22,19,0.02)
-        );
-    }
-
-    .world-card.art {
-      background:
-        linear-gradient(
-          to top,
-          rgba(20,18,16,0.65),
-          rgba(20,18,16,0.05)
-        ),
-        url("art.jpg");
-
-      background-size: cover;
-      background-position: center;
-    }
-
-    .world-card.creation {
-      background:
-        linear-gradient(
-          to top,
-          rgba(20,18,16,0.65),
-          rgba(20,18,16,0.05)
-        ),
-        url("creation.jpg");
-
-      background-size: cover;
-      background-position: center;
-    }
-
-    .card-content {
-      position: relative;
-      z-index: 2;
-      color: white;
-    }
-
-    .card-number {
-      font-size: 10px;
-      letter-spacing: 4px;
-      margin-bottom: 15px;
-      opacity: 0.7;
-    }
-
-    .card-content h3 {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(35px, 4vw, 60px);
-      font-weight: 400;
-      margin-bottom: 20px;
-    }
-
-    .card-content p {
-      max-width: 420px;
-      font-size: 13px;
-      line-height: 1.8;
-      letter-spacing: 1px;
-    }
-
-    .discover {
-      display: inline-block;
-      margin-top: 30px;
-
-      color: white;
-      text-decoration: none;
-
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-
-      border-bottom: 1px solid rgba(255,255,255,0.6);
-      padding-bottom: 6px;
-    }
-
-    /* =========================
-       QUOTE
-    ========================== */
-
-    .quote {
-      min-height: 65vh;
-
-      display: flex;
-      align-items: center;
-      justify-content: center;
-
-      padding: 100px 8%;
-
-      background: #f5f0e8;
-      text-align: center;
-    }
-
-    .quote h2 {
-      max-width: 900px;
-
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: clamp(38px, 5vw, 72px);
-      font-weight: 400;
-      line-height: 1.25;
-    }
-
-    .quote span {
-      display: block;
-      margin-top: 30px;
-
-      font-size: 10px;
-      letter-spacing: 5px;
-      text-transform: uppercase;
-    }
-
-    /* =========================
-       FOOTER
-    ========================== */
-
-    footer {
-      background: #d9d0c4;
-      padding: 70px 7% 35px;
-    }
-
-    .footer-main {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 40px;
-    }
-
-    .footer-logo {
-      font-family: Georgia, "Times New Roman", serif;
-      font-size: 34px;
-      letter-spacing: 7px;
-    }
-
-    .footer-text {
-      margin-top: 15px;
-      font-size: 10px;
-      letter-spacing: 4px;
-      text-transform: uppercase;
-      opacity: 0.6;
-    }
-
-    .footer-links {
-      display: flex;
-[16/09/2026 12:42 am] 𝒕𝒂𝒏𝒕𝒆 𝑷𝒂𝒓𝒊𝒔𝒂: gap: 25px;
-    }
-
-    .footer-links a {
-      color: #181715;
-      text-decoration: none;
-      font-size: 10px;
-      letter-spacing: 3px;
-      text-transform: uppercase;
-    }
-
-    .copyright {
-      margin-top: 60px;
-      padding-top: 25px;
-
-      border-top: 1px solid rgba(0,0,0,0.15);
-
-      font-size: 9px;
-      letter-spacing: 2px;
-      opacity: 0.5;
-    }
-
-    /* =========================
-       MOBILE
-    ========================== */
-
-    @media (max-width: 850px) {
-
-      nav {
-        padding: 25px;
-      }
-
-      .logo {
-        font-size: 18px;
-        letter-spacing: 4px;
-      }
-
-      .nav-links {
         display: none;
-      }
-
-      h1 {
-        letter-spacing: 5px;
-      }
-
-      .subtitle {
-        letter-spacing: 5px;
-      }
-
-      .world-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .world-card {
-        min-height: 500px;
-        padding: 35px;
-      }
-
-      .footer-main {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .footer-links {
-        flex-wrap: wrap;
-      }
     }
-
-  </style>
+}
+</style>
 </head>
 
 
 <body>
 
-  <!-- ======================
-       ENTRANCE
-  ======================= -->
+<section class="entrance">
 
-  <section class="hero" id="home">
-
-    <nav>
-
-      <div class="logo">
+    <div class="logo">
         PARISA ART
-      </div>
+    </div>
 
-      <div class="nav-links">
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#worlds">Art</a>
-        <a href="#worlds">Creation Mansion</a>
-        <a href="#contact">Contact</a>
-      </div>
+    <div class="center">
 
-    </nav>
+        <div class="welcome">
+            Welcome to
+        </div>
 
+        <h1 class="title">
+            THE CREATION MANSION
+        </h1>
 
-    <div class="hero-content">
+        <div class="subtitle">
+            Create · Inspire · Transform
+        </div>
 
-      <div class="welcome">
-        Welcome to
-      </div>
-
-      <h1>PARISA ART</h1>
-
-      <div class="subtitle">
-        A HOUSE OF CREATION
-      </div>
-
-      <div class="line"></div>
-
-      <div class="tagline">
-        Create · Inspire · Transform
-      </div>
-
-      <a class="enter-button" href="#about">
-        ENTER →
-      </a>
+        <a href="#explore" class="enter">
+            Enter
+        </a>
 
     </div>
 
     <div class="scroll">
-      Scroll to Explore
+        SCROLL TO EXPLORE
     </div>
 
-  </section>
-
-
-
-  <!-- ======================
-       ABOUT
-  ======================= -->
-
-  <section class="intro" id="about">
-
-    <div class="intro-inner">
-
-      <div class="section-label">
-        PARISA ART
-      </div>
-
-      <h2>
-        Where art becomes
-        identity.
-      </h2>
-
-      <p>
-        PARISA ART is a creative world shaped through visual art,
-        styling, photography and beauty.
-        A space where different forms of creation meet,
-        evolve and become something entirely new.
-      </p>
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ======================
-       TWO WORLDS
-  ======================= -->
-
-  <section class="worlds" id="worlds">
-
-    <div class="world-title">
-
-      <div class="section-label">
-        Explore
-      </div>
-
-      <h2>
-        Two worlds.
-        One vision.
-      </h2>
-
-    </div>
-
-
-    <div class="world-grid">
-
-
-      <!-- PARISA ART -->
-
-      <div class="world-card art">
-
-        <div class="card-content">
-
-          <div class="card-number">
-            01
-          </div>
-
-          <h3>
-            ART
-          </h3>
-
-          <p>
-            Painting · Visual Art · Photography · Styling
-          </p>
-
-          <a class="discover" href="#">
-            Discover Parisa Art →
-          </a>
-
-        </div>
-
-      </div>
-
-
-
-      <!-- CREATION MANSION -->
-
-      <div class="world-card creation">
-
-        <div class="card-content">
-
-          <div class="card-number">
-            02
-          </div>
-
-          <h3>
-            THE CREATION
-            MANSION
-          </h3>
-
-          <p>
-            Bride · Groom · Hair · Makeup · Styling
-            <br><br>
-            by Parisa & Kahran
-          </p>
-
-          <a class="discover" href="#">
-            Enter The Mansion →
-          </a>
-
-        </div>
-
-      </div>
-
-
-    </div>
-
-  </section>
-
-
-
-  <!-- ======================
-       STATEMENT
-  ======================= -->
-
-  <section class="quote">
-
-    <div>
-
-      <h2>
-        “Creation has no boundaries.”
-      </h2>
-
-      <span>
-        PARISA ART
-      </span>
-
-    </div>
-
-  </section>
-[16/09/2026 12:42 am] 𝒕𝒂𝒏𝒕𝒆 𝑷𝒂𝒓𝒊𝒔𝒂: <!-- ======================
-       FOOTER
-  ======================= -->
-
-  <footer id="contact">
-
-    <div class="footer-main">
-
-      <div>
-
-        <div class="footer-logo">
-          PARISA ART
-        </div>
-
-        <div class="footer-text">
-          ART · VISUAL · CREATION
-        </div>
-
-      </div>
-
-
-      <div class="footer-links"> 
-
-        <a href="#">Instagram</a>
-
-        <a href="#">Contact</a>
-
-        <a href="#">Booking</a>
-
-      </div>
-
-    </div>
-
-
-    <div class="copyright">
-      © PARISA ART — ALL RIGHTS RESERVED
-    </div>
-
-  </footer>
-
+</section>
+
+
+<section id="explore"
+style="
+height:100vh;
+background:#f4f3ef;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+">
+
+<div>
+
+<p style="
+font-size:10px;
+letter-spacing:6px;
+margin-bottom:25px;
+">
+A HOUSE OF CREATION
+</p>
+
+<h2 style="
+font-family:Georgia,serif;
+font-weight:400;
+font-size:clamp(42px,7vw,90px);
+letter-spacing:5px;
+">
+WHERE IDEAS<br>
+BECOME ART
+</h2>
+
+</div>
+
+</section>
 
 </body>
 </html>

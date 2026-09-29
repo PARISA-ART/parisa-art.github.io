@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Bridal | PARISA ART</title>
+
+<style>
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:#f3ede4;
+  color:#211f1c;
+  font-family:Georgia, "Times New Roman", serif;
+}
+
+header{
+  padding:28px 6%;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  border-bottom:1px solid rgba(0,0,0,.15);
+}
+
+.brand{
+  font-size:18px;
+  letter-spacing:5px;
+}
+
+.home{
+  color:#211f1c;
+  text-decoration:none;
+  font-family:Arial, sans-serif;
+  font-size:10px;
+  letter-spacing:3px;
+}
+
+.hero{
+  min-height:70vh;
+  display:flex;
+  flex-direction:column;
+  justify-content:center;
+  align-items:center;
+  text-align:center;
+  padding:70px 20px;
+}
+
+.number{
+  font-family:Arial, sans-serif;
+  font-size:10px;
+  letter-spacing:4px;
+  margin-bottom:25px;
+}
+
+.hero h1{
+  font-size:clamp(55px,10vw,130px);
+  font-weight:400;
+  letter-spacing:4px;
+}
+
+.hero p{
+  margin-top:22px;
+  font-family:Arial, sans-serif;
+  font-size:10px;
+  letter-spacing:4px;
+  text-transform:uppercase;
+}
+
+.intro{
+  max-width:750px;
+  margin:0 auto;
+  padding:0 25px 100px;
+  text-align:center;
+  font-size:18px;
+  line-height:1.8;
+}
+
+.gallery{
+  width:100%;
+  display:grid;
+  grid-template-columns:repeat(2,1fr);
+  gap:3px;
+  background:#171614;
+  padding:3px;
+}
+
+.gallery img{
+  width:100%;
+  height:750px;
+  display:block;
+  object-fit:cover;
+}
+
+.gallery img.wide{
+  grid-column:1 / -1;
+  height:auto;
+}
+
+footer{
+  padding:90px 6%;
+  text-align:center;
+}
+
+footer h2{
+  font-size:35px;
+  font-weight:400;
+  letter-spacing:3px;
+}
+
+footer p{
+  margin-top:15px;
+  font-family:Arial, sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+footer a{
+  display:inline-block;
+  margin-top:35px;
+  color:#211f1c;
+  text-decoration:none;
+  border-bottom:1px solid #211f1c;
+  padding-bottom:7px;
+  font-family:Arial, sans-serif;
+  font-size:9px;
+  letter-spacing:3px;
+}
+
+@media(max-width:700px){
+
+  header{
+    padding:22px 20px;
+  }
+
+  .brand{
+    font-size:14px;
+    letter-spacing:3px;
+  }
+
+  .hero{
+    min-height:55vh;
+  }
+
+  .hero h1{
+    font-size:55px;
+  }
+
+  .intro{
+    font-size:16px;
+    padding-bottom:60px;
+  }
+
+  .gallery{
+    grid-template-columns:1fr;
+  }
+
+  .gallery img,
+  .gallery img.wide{
+    grid-column:auto;
+    width:100%;
+    height:auto;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<header>
+  <div class="brand">PARISA ART</div>
+  <a class="home" href="../">← HOME</a>
+</header>
+
+<section class="hero">
+  <div class="number">02 / THE WORLD OF</div>
+  <h1>BRIDAL</h1>
+  <p>Bride · Groom · Luxury Styling</p>
+</section>
+
+<section class="intro">
+  A refined bridal world dedicated to complete beauty,
+  hair, makeup and styling — created for the bride,
+  groom and the visual identity of the wedding day.
+</section>
+
+<section class="gallery">
+
+  <img src="../photo_2026-09-29_05-31-13.jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-31-14 (2).jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-33-08 (3).jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-33-08.jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-33-09.jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-33-10 (2).jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-33-10 (3).jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-33-10.jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-33-11 (2).jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-33-11.jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-33-12 (2).jpg" alt="PARISA ART Bridal">
+
+  <img src="../photo_2026-09-29_05-33-12.jpg" alt="PARISA ART Bridal">
+
+</section>
+
+<footer>
+  <h2>PARISA ART</h2>
+  <p>A HOUSE OF CREATION</p>
+  <a href="../">← RETURN TO HOME</a>
+</footer>
+
+</body>
+</html>

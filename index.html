@@ -625,21 +625,85 @@ letter-spacing:4px;
 
 
 <section class="section" id="contact">
- 
+
   <div class="section-label">
-    Contact
+    BOOKING
   </div>
 
   <h2>
-    Create With Parisa.
+    Book a Consultation.
   </h2>
 
   <p>
-    Styling · Bridal · Cinema & Theatre · Art ·
-    Creative Collaborations · Selected Projects
+    Every project begins with a conversation.
+    Tell us what you are looking for, your preferred date and location,
+    and we will personally guide you through the next steps.
   </p>
 
-</section>
+<form class="booking-form" id="bookingForm">
 
+    <label>Your Name</label>
+    <input type="text" name="name" required>
+
+    <label>WhatsApp / Email</label>
+    <input type="text" name="contact" required>
+
+    <label>Service</label>
+    <select name="service" required>
+      <option value="">Select a service</option>
+      <option>Styling</option>
+      <option>Bridal</option>
+      <option>Hair & Makeup</option>
+      <option>Cinema & Theatre</option>
+      <option>Creative Project</option>
+    </select>
+
+    <label>Preferred Date</label>
+    <input type="date" name="date">
+
+    <label>City / Country</label>
+    <input type="text" name="location">
+
+    <label>Tell us about your project</label>
+    <textarea name="message" rows="5"></textarea>
+
+    <button type="submit">
+      REQUEST A CONSULTATION →
+    </button>
+
+  </form>
+
+</section>
+<script>
+document.getElementById("bookingForm").addEventListener("submit", function(event) {
+  event.preventDefault();
+
+  const name = this.elements["name"].value;
+  const contact = this.elements["contact"].value;
+  const service = this.elements["service"].value;
+  const date = this.elements["date"].value;
+  const location = this.elements["location"].value;
+  const message = this.elements["message"].value;
+
+  const text =
+`Hello PARISA ART,
+
+I would like to request a consultation.
+
+Name: ${name}
+WhatsApp / Email: ${contact}
+Service: ${service}
+Preferred Date: ${date}
+City / Country: ${location}
+
+Project Details:
+${message}`;
+
+  const whatsappURL =
+    "https://wa.me/491773023373?text=" + encodeURIComponent(text);
+
+  window.open(whatsappURL, "_blank");
+});
+</script>
 </body>
 </html>

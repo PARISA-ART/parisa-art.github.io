@@ -415,30 +415,18 @@ letter-spacing:4px;
   }
 }
 }
-    
-.bridal-gallery{
-  display:grid;
-  grid-template-columns:repeat(2,1fr);
-  gap:14px;
-  margin-top:35px;
-}
 
-.bridal-gallery img{
+ .bridal-video{
   width:100%;
-  height:520px;
-  object-fit:cover;
+  max-width:520px;
+  margin:35px auto 0;
+}
+
+.bridal-video video{
+  width:100%;
+  height:auto;
   display:block;
-}
-
-@media(max-width:768px){
-  .bridal-gallery{
-    grid-template-columns:1fr;
-  }
-
-  .bridal-gallery img{
-    height:auto;
-  }
-}
+} 
 </style>
 </head>
 
@@ -552,12 +540,11 @@ letter-spacing:4px;
       <h3>Bridal</h3>
       <span>Bride · Groom · Luxury Styling</span>
     </div>
-  <div class="bridal-gallery">
-  <img src="photo_2026-09-29_05-31-13.jpg" alt="PARISA ART Bridal">
-  <img src="photo_2026-09-29_05-31-13 (2).jpg" alt="PARISA ART Bridal">
-  <img src="photo_2026-09-29_05-31-14.jpg" alt="PARISA ART Bridal">
-  <img src="photo_2026-09-29_05-31-14 (2).jpg" alt="PARISA ART Bridal">
-</div>  
+  <div class="bridal-video">
+  <video controls playsinline preload="metadata">
+    <source src="bridal-video.mp4" type="video/mp4">
+  </video>
+</div>
 <div class="world" id="cinema-theatre">
       <span>03</span>
       <h3>Cinema & Theatre</h3>

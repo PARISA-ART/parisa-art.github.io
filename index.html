@@ -427,6 +427,80 @@ letter-spacing:4px;
   height:auto;
   display:block;
 } 
+ /* BOOKING FORM */
+
+.booking-form{
+  width:100%;
+  max-width:680px;
+  margin-top:45px;
+  display:flex;
+  flex-direction:column;
+  gap:22px;
+}
+
+.booking-form label{
+  display:block;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-bottom:-14px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form textarea{
+  width:100%;
+  box-sizing:border-box;
+  border:none;
+  border-bottom:1px solid #8f887f;
+  border-radius:0;
+  background:transparent;
+  padding:12px 2px;
+  font-family:inherit;
+  font-size:16px;
+  color:#29241f;
+  outline:none;
+}
+
+.booking-form textarea{
+  min-height:120px;
+  resize:vertical;
+}
+
+.booking-form input:focus,
+.booking-form select:focus,
+.booking-form textarea:focus{
+  border-bottom:1px solid #29241f;
+}
+
+.booking-form button{
+  width:100%;
+  margin-top:15px;
+  padding:18px 25px;
+  border:1px solid #29241f;
+  border-radius:0;
+  background:#29241f;
+  color:#f5f0e9;
+  font-family:inherit;
+  font-size:12px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  cursor:pointer;
+}
+
+@media (max-width:700px){
+  .booking-form{
+    max-width:100%;
+    margin-top:35px;
+    gap:20px;
+  }
+
+  .booking-form input,
+  .booking-form select,
+  .booking-form textarea{
+    font-size:16px;
+  }
+} 
 </style>
 </head>
 
